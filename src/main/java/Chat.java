@@ -9,10 +9,11 @@ import java.util.List;
 public class Chat {
     private List<String> chats = new ArrayList(List.of("Ken: Hello", "Dai: Hello, too!"));
 
-    @RequestMapping(value="/hello")
-    String hello(Model model){
-        model.addAttribute("chats", chats);
-        return "home.html";
+    @RequestMapping(value="/add")
+    String addChat(@RequestParam("name") String name,
+                   @RequestParam("chat") String chat) {
+        chats.add(name +":" +chat);
+        return "redirect:/hello";
     }
 }
 
