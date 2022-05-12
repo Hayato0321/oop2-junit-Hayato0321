@@ -5,13 +5,16 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ChannelTests {
-
+//チャネルを登録//
+    String chat="Hello World";
     @Test
-    void addChannel() {
+    public void addChannel(){
 
-        var general = new Channel("general");
-        assertThat(general.getName()).isEqualTo("general");
-        System.out.println(general.getName());
+        Channel channel = new Channel();
+        channel.Message(chat);
+        channel.printMessage();
 
+        assertThat(channel.getMessage()).isEqualTo(chat);
+
+        }
     }
-}

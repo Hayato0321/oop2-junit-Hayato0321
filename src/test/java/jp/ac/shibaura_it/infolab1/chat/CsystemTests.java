@@ -9,10 +9,10 @@ public class CsystemTests {
     //チャットを入力する//
 
     @Test
-    public void addSystemTests(){
+    public void addCsystem(){
         Csystem csystem = new Csystem();
-        csystem.Message(chat);
-        csystem.pMessage();
+        csystem.onMessage(chat);
+        csystem.printMessage();
 
         assertThat(csystem.getMessage()).isEqualTo(chat);
 
